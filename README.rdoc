@@ -6,6 +6,8 @@ This README would normally document whatever steps are necessary to get the appl
 
 git clone https://github.com/ycchen/cfpb.git
 
+bundle install
+
 rake db:create
 
 rake db:migrate
@@ -28,6 +30,8 @@ git clone https://github.com/ycchen/cfpb.git
 == Download pre-loaded database development.sqlite3
 
 https://drive.google.com/file/d/0B6LJjL6J3VKNZ2l5eW0wUVdKSFU/view?usp=sharing
+
+unzip development.sqlite3.zip into /db/development.sqlite3
 
 == Download report pdf
 

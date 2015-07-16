@@ -1,0 +1,58 @@
+<script type="text/javascript" charset="utf-8">
+$(function () {
+    $('#by-sub-product').highcharts({
+        chart: {
+            type: 'column'
+        },
+        credits: {
+            enabled: false
+        },
+        title: {
+            text: 'Complaints by sub product'
+        },
+        // subtitle: {
+        //     text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+        // },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -50,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Compliant counts'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: 'Compliants by sub product: <b>{point.y:.1f}</b>'
+        },
+        series: [{
+            name: 'Compliants',
+            data: <%= @by_sub_product.map{|c| c}.to_s.html_safe %>,
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                align: 'right',
+                format: '{point.y:.1f}', // one decimal
+                y: 10, // 10 pixels down from the top
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    });
+});
+</script>
+<div id="by-sub-product"></div><hr/>
+<%#= @by_state.map{|c| c}.to_s.html_safe %>

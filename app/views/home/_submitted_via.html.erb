@@ -1,0 +1,57 @@
+<script type="text/javascript" charset="utf-8">
+
+$(function(){
+
+    $("#puppy-gender-chart").highcharts({
+        chart: {
+                type: 'pie'
+        },
+        title: {
+                text: 'Complaint by submitted method'
+        },
+        credits: {
+            enabled: false
+        },
+        legend: {
+            enabled: true,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0,
+            useHTML: true, 
+            labelFormatter: function() {
+                return this.name + ': ' + this.y;
+            }
+        },
+        plotOptions:{
+            pie:{
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels:{
+                    enabled: true,
+                    style: {
+                        fontSize: '9px'
+                        //fontWeight:'bold'
+                    },
+                    formatter: function(){
+                        return '<b>' + this.point.name +'</b>: ' + this.y + '/' + this.total;
+                    }
+                }
+            }
+        },
+
+        series: [   {
+                        name: 'Complaint by submitted method',
+                        // center: [220, 150],
+                        showInLegend:false,
+                        data: <%= @submitted_via_result.map{|c| c}.to_s.html_safe %>
+
+                    }
+                ]
+
+
+    });
+});
+</script>
+<div id="puppy-gender-chart"></div><hr/>
+<%#= @submitted_via_result.map{|c| c}.to_s.html_safe %>

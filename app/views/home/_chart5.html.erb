@@ -1,0 +1,57 @@
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+    $('#chart-5').highcharts({
+        chart: {
+            type: 'line'
+        },
+        credits: {
+            enabled: false
+        },
+        title: {
+            text: 'Top 5 state with compliants'
+        },
+        // subtitle: {
+        //     text: 'Source: WorldClimate.com'
+        // },
+        xAxis: {
+            categories: ['2011','2012','2013','2014','2015']
+        },
+        yAxis: {
+            title: {
+                text: 'Complaints'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        series: [
+        {
+            name: 'CA',
+            data:  <%= @complaints_by_ca.map{|c| c[1]}.to_s.html_safe %>
+        },
+        {
+            name: 'FL',
+            data:  <%= @complaints_by_fl.map{|c| c[1]}.to_s.html_safe %>
+        },
+        {
+            name: 'TX',
+            data:  <%= @complaints_by_tx.map{|c| c[1]}.to_s.html_safe %>
+        },
+        {
+            name: 'NY',
+            data:  <%= @complaints_by_ny.map{|c| c[1]}.to_s.html_safe %>
+        },
+        {
+            name: 'GA',
+            data:  <%= @complaints_by_ga.map{|c| c[1]}.to_s.html_safe %>
+        }]
+    });
+});
+</script>
+<div id="chart-5"></div><hr/>

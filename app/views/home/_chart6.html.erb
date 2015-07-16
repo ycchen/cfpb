@@ -1,0 +1,93 @@
+<script type="text/javascript" charset="utf-8">
+$(function () {
+    $('#chart6').highcharts({
+        chart: {
+            type: 'area'
+        },
+        credits: {
+            enabled: false
+        },
+        title: {
+            text: 'Compliants by year with top 5 states'
+        },
+        // subtitle: {
+        //     text: 'Source: <a href="http://thebulletin.metapress.com/content/c4120650912x74k7/fulltext.pdf">' +
+        //         'thebulletin.metapress.com</a>'
+        // },
+        xAxis: {
+            allowDecimals: false,
+            labels: {
+                formatter: function () {
+                    return this.value; // clean, unformatted number for year
+                }
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Compliants'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value;
+                }
+            }
+        },
+        tooltip: {
+            pointFormat: '{series.name} reported <b>{point.y:,.0f}</b><br/> compliants in {point.x}'
+        },
+        plotOptions: {
+            area: {
+                pointStart: 2011,
+                marker: {
+                    enabled: false,
+                    symbol: 'circle',
+                    radius: 2,
+                    states: {
+                        hover: {
+                            enabled: true
+                        }
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'US',
+            data: <%= @complaints_by_year.map{|c| c[1]}.to_s.html_safe %>
+        },
+        {
+            name: 'CA',
+            data:  <%= @complaints_by_ca.map{|c| c[1]}.to_s.html_safe %>
+        },
+        {
+            name: 'FL',
+            data:  <%= @complaints_by_fl.map{|c| c[1]}.to_s.html_safe %>
+        },
+        {
+            name: 'TX',
+            data:  <%= @complaints_by_tx.map{|c| c[1]}.to_s.html_safe %>
+        },
+        {
+            name: 'NY',
+            data:  <%= @complaints_by_ny.map{|c| c[1]}.to_s.html_safe %>
+        },
+        {
+            name: 'GA',
+            data:  <%= @complaints_by_ga.map{|c| c[1]}.to_s.html_safe %>
+        }
+
+        // , 
+        // {
+        //     name: 'USSR/Russia',
+        //     data: [null, null, null, null, null, null, null, null, null, null,
+        //         5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
+        //         4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
+        //         15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
+        //         33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
+        //         35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
+        //         21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        // }
+        ]
+    });
+});
+</script>
+<div id="chart6"></div>

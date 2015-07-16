@@ -1,0 +1,54 @@
+<script type="text/javascript" charset="utf-8">
+
+$(function(){
+	$("#puppy-color-chart").highcharts({	
+		chart: {
+				type: 'pie'
+		},
+		title: {
+				text: 'Compliants by product'
+		},
+		credits: {enabled: false},
+		legend: {
+            enabled: true,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0,
+            useHTML: true, 
+            labelFormatter: function() {
+                return this.name + ': ' + this.y;
+            }
+        },
+		plotOptions:{
+			pie:{
+				allowPointSelect: true,
+				cursor: 'pointer',
+				// size: 150,
+				dataLabels:{
+					enabled: true,
+					style: {
+                        fontSize: '9px'
+                        //fontWeight:'bold'
+                    },
+					formatter: function(){
+						return '<b>' + this.point.name +'</b>: ' + this.y + ' out of <b>' + this.total + '</b>'
+					}
+				}
+			}
+		},
+		series: [	{
+		                name: 'Compliant by product',
+		                // center: [220, 150],
+		                showInLegend:false,
+		                data: <%= @by_product.map{|c| c}.to_s.html_safe %>
+	                }
+                ]
+
+
+	});
+});
+</script>
+
+<div id="puppy-color-chart"></div><hr/>
+<%#= @by_product.map{|c| c}.to_s.html_safe %>

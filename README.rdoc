@@ -1,0 +1,37 @@
+== README
+
+This README would normally document whatever steps are necessary to get the application up and running.
+
+== Setup application from scratch (without pre-loaded database)
+
+git clone https://github.com/ycchen/cfpb.git
+
+rake db:create
+
+rake db:migrate
+
+== Load consumer compliant data, geography data, and income data
+
+rake import_data:load_compliant_data
+
+rake import_data:load_geography_data
+
+rake import_data:load_income_data
+
+rake import_data:create_additional_tables_and_indexes ##(make sure to run this task as the last task)
+
+
+== Setup application with pre-loaded database (does not need to run migration and rake tasks)
+
+git clone https://github.com/ycchen/cfpb.git
+
+
+== run app
+
+rails s
+
+== view app
+
+http://localhost:3000
+
+

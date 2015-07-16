@@ -1,0 +1,896 @@
+<script type="text/javascript" charset="utf-8">
+
+$(function () {
+    
+        var colors = Highcharts.getOptions().colors,
+            categories = ["Fallon", "Ella", "Wendy", "Wera", "Emily", "A-May", "Sakura", "Esme", "Gloria", "Jackie", "Jade", "Otto", "Tiffany", "Yvonne", "Mambo", "Nike", "Queeine", "Olivia", "Betty", "Margo", "Brandy", "Apple", "Ada", "Happy", "Sissy", "Amanda", "Diamond", "Dana", "Wendy", "Nana", "Carmen", "Ella", "Jessica", "Janet", "Melody", "Yvonne", "Jackie", "Emily", "Abby", "Sakura", "Tiffany", "Cartier", "Margo", "Wera", "Esme", "Raven", "Betty", "Sissy", "Butter", "Apple", "Vicky", "A-May", "Mambo", "Nike", "Jade", "Diamond", "Queeine", "Amanda", "Raven", "Brandy", "Wendy", "Ada", "Tiffany", "Carmen", "Jackie", "Emily", "Jessica", "Ella", "Vicky", "Sissy", "Apple", "Betty", "Esme", "Cartier", "Margo", "Nana", "Mambo", "A-May", "Melody", "Diamond", "Raven"],
+            name = 'Litter',
+            data = [
+
+                {
+                    y: 0,
+                    color: colors[0],
+                    drilldown:{
+                        name: 'Fallon-2014-11',
+                        categories: ['Male', 'Female'],
+                        color: colors[0],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 2,
+                    color: colors[1],
+                    drilldown:{
+                        name: 'Ella-2014-10',
+                        categories: ['Male', 'Female'],
+                        color: colors[1],
+                        data: [2,0]
+                    }
+                },
+                {
+                    y: 7,
+                    color: colors[2],
+                    drilldown:{
+                        name: 'Wendy-2014-10',
+                        categories: ['Male', 'Female'],
+                        color: colors[2],
+                        data: [5,2]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[3],
+                    drilldown:{
+                        name: 'Wera-2014-10',
+                        categories: ['Male', 'Female'],
+                        color: colors[3],
+                        data: [2,2]
+                    }
+                },
+                {
+                    y: 2,
+                    color: colors[4],
+                    drilldown:{
+                        name: 'Emily-2014-10',
+                        categories: ['Male', 'Female'],
+                        color: colors[4],
+                        data: [0,2]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[5],
+                    drilldown:{
+                        name: 'A-May-2014-10',
+                        categories: ['Male', 'Female'],
+                        color: colors[5],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[6],
+                    drilldown:{
+                        name: 'Sakura-2014-10',
+                        categories: ['Male', 'Female'],
+                        color: colors[6],
+                        data: [2,2]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[7],
+                    drilldown:{
+                        name: 'Esme-2014-09',
+                        categories: ['Male', 'Female'],
+                        color: colors[7],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 2,
+                    color: colors[8],
+                    drilldown:{
+                        name: 'Gloria-2014-09',
+                        categories: ['Male', 'Female'],
+                        color: colors[8],
+                        data: [2,0]
+                    }
+                },
+                {
+                    y: 3,
+                    color: colors[9],
+                    drilldown:{
+                        name: 'Jackie--2014-09',
+                        categories: ['Male', 'Female'],
+                        color: colors[9],
+                        data: [1,2]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[10],
+                    drilldown:{
+                        name: 'Jade-2014-09',
+                        categories: ['Male', 'Female'],
+                        color: colors[10],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 3,
+                    color: colors[11],
+                    drilldown:{
+                        name: 'Otto-2014-09',
+                        categories: ['Male', 'Female'],
+                        color: colors[11],
+                        data: [1,2]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[12],
+                    drilldown:{
+                        name: 'Tiffany-2014-09',
+                        categories: ['Male', 'Female'],
+                        color: colors[12],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 3,
+                    color: colors[13],
+                    drilldown:{
+                        name: 'Yvonne-2014-09',
+                        categories: ['Male', 'Female'],
+                        color: colors[13],
+                        data: [1,2]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[14],
+                    drilldown:{
+                        name: 'Mambo-2014-09',
+                        categories: ['Male', 'Female'],
+                        color: colors[14],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[15],
+                    drilldown:{
+                        name: 'Nike-2014-08',
+                        categories: ['Male', 'Female'],
+                        color: colors[15],
+                        data: [3,1]
+                    }
+                },
+                {
+                    y: 3,
+                    color: colors[16],
+                    drilldown:{
+                        name: 'Queenie-2014-08',
+                        categories: ['Male', 'Female'],
+                        color: colors[16],
+                        data: [0,3]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[17],
+                    drilldown:{
+                        name: 'Olivia-2014-08',
+                        categories: ['Male', 'Female'],
+                        color: colors[17],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[18],
+                    drilldown:{
+                        name: 'Betty-2014-08',
+                        categories: ['Male', 'Female'],
+                        color: colors[18],
+                        data: [2,2]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[19],
+                    drilldown:{
+                        name: 'Margo-2014-07',
+                        categories: ['Male', 'Female'],
+                        color: colors[19],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 2,
+                    color: colors[20],
+                    drilldown:{
+                        name: 'Brandy-2014-07',
+                        categories: ['Male', 'Female'],
+                        color: colors[20],
+                        data: [1,1]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[21],
+                    drilldown:{
+                        name: 'Apple-2014-07',
+                        categories: ['Male', 'Female'],
+                        color: colors[21],
+                        data: [4,0]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[22],
+                    drilldown:{
+                        name: 'Ada-2014-07',
+                        categories: ['Male', 'Female'],
+                        color: colors[22],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 5,
+                    color: colors[23],
+                    drilldown:{
+                        name: 'Happy-2014-07',
+                        categories: ['Male', 'Female'],
+                        color: colors[23],
+                        data: [3,2]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[24],
+                    drilldown:{
+                        name: 'Sissy-2014-07',
+                        categories: ['Male', 'Female'],
+                        color: colors[24],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[25],
+                    drilldown:{
+                        name: 'Amanda-2013-07',
+                        categories: ['Male', 'Female'],
+                        color: colors[25],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 1,
+                    color: colors[26],
+                    drilldown:{
+                        name: 'Diamond-2014-07',
+                        categories: ['Male', 'Female'],
+                        color: colors[26],
+                        data: [1,0]
+                    }
+                },
+                {
+                    y: 5,
+                    color: colors[27],
+                    drilldown:{
+                        name: 'Dana-2014-06',
+                        categories: ['Male', 'Female'],
+                        color: colors[27],
+                        data: [3,2]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[28],
+                    drilldown:{
+                        name: 'Wendy-2014-04',
+                        categories: ['Male', 'Female'],
+                        color: colors[28],
+                        data: [1,3]
+                    }
+                },
+                {
+                    y: 3,
+                    color: colors[29],
+                    drilldown:{
+                        name: 'Nana-2014-03',
+                        categories: ['Male', 'Female'],
+                        color: colors[29],
+                        data: [2,1]
+                    }
+                },
+                {
+                    y: 3,
+                    color: colors[30],
+                    drilldown:{
+                        name: 'Carmen-2014-04',
+                        categories: ['Male', 'Female'],
+                        color: colors[30],
+                        data: [2,1]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[31],
+                    drilldown:{
+                        name: 'Ella-2014-03',
+                        categories: ['Male', 'Female'],
+                        color: colors[31],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 1,
+                    color: colors[32],
+                    drilldown:{
+                        name: 'Jessica-2014-03',
+                        categories: ['Male', 'Female'],
+                        color: colors[32],
+                        data: [1,0]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[33],
+                    drilldown:{
+                        name: 'Janet-2014-03',
+                        categories: ['Male', 'Female'],
+                        color: colors[33],
+                        data: [1,3]
+                    }
+                },
+                {
+                    y: 1,
+                    color: colors[34],
+                    drilldown:{
+                        name: 'Melody-2014-03',
+                        categories: ['Male', 'Female'],
+                        color: colors[34],
+                        data: [0,1]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[35],
+                    drilldown:{
+                        name: 'Yvonne-2014-03',
+                        categories: ['Male', 'Female'],
+                        color: colors[35],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[36],
+                    drilldown:{
+                        name: 'Jackie-2014-03',
+                        categories: ['Male', 'Female'],
+                        color: colors[36],
+                        data: [2,2]
+                    }
+                },
+                {
+                    y: 3,
+                    color: colors[37],
+                    drilldown:{
+                        name: 'Emily-2014-03',
+                        categories: ['Male', 'Female'],
+                        color: colors[37],
+                        data: [2,1]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[38],
+                    drilldown:{
+                        name: 'Abby-2014-04',
+                        categories: ['Male', 'Female'],
+                        color: colors[38],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 3,
+                    color: colors[39],
+                    drilldown:{
+                        name: 'Sakura-2014-03',
+                        categories: ['Male', 'Female'],
+                        color: colors[39],
+                        data: [1,2]
+                    }
+                },
+                {
+                    y: 2,
+                    color: colors[40],
+                    drilldown:{
+                        name: 'Tiffany2014-03',
+                        categories: ['Male', 'Female'],
+                        color: colors[40],
+                        data: [0,2]
+                    }
+                },
+                {
+                    y: 1,
+                    color: colors[41],
+                    drilldown:{
+                        name: 'Cartier-2014-03',
+                        categories: ['Male', 'Female'],
+                        color: colors[41],
+                        data: [0,1]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[42],
+                    drilldown:{
+                        name: 'Margo-2014-03',
+                        categories: ['Male', 'Female'],
+                        color: colors[42],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 8,
+                    color: colors[43],
+                    drilldown:{
+                        name: 'Wera-2014-04',
+                        categories: ['Male', 'Female'],
+                        color: colors[43],
+                        data: [5,3]
+                    }
+                },
+                {
+                    y: 6,
+                    color: colors[44],
+                    drilldown:{
+                        name: 'Esme-2014-02',
+                        categories: ['Male', 'Female'],
+                        color: colors[44],
+                        data: [4,2]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[45],
+                    drilldown:{
+                        name: 'Raven-2014-02',
+                        categories: ['Male', 'Female'],
+                        color: colors[45],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[46],
+                    drilldown:{
+                        name: 'Betty-2014-01',
+                        categories: ['Male', 'Female'],
+                        color: colors[46],
+                        data: [2,2]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[47],
+                    drilldown:{
+                        name: 'Sissy-2014-01',
+                        categories: ['Male', 'Female'],
+                        color: colors[47],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 3,
+                    color: colors[48],
+                    drilldown:{
+                        name: 'Butter-2014-01',
+                        categories: ['Male', 'Female'],
+                        color: colors[48],
+                        data: [2,1]
+                    }
+                },
+                {
+                    y: 5,
+                    color: colors[49],
+                    drilldown:{
+                        name: 'Apple-2014-01',
+                        categories: ['Male', 'Female'],
+                        color: colors[49],
+                        data: [2,3]
+                    }
+                },
+                {
+                    y: 1,
+                    color: colors[50],
+                    drilldown:{
+                        name: 'Vicky-2014-01',
+                        categories: ['Male', 'Female'],
+                        color: colors[50],
+                        data: [1,0]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[51],
+                    drilldown:{
+                        name: 'A-May-2014-01',
+                        categories: ['Male', 'Female'],
+                        color: colors[51],
+                        data: [3,1]
+                    }
+                },
+                {
+                    y: 1,
+                    color: colors[52],
+                    drilldown:{
+                        name: 'Mambo-2013-12',
+                        categories: ['Male', 'Female'],
+                        color: colors[52],
+                        data: [1,0]
+                    }
+                },
+                {
+                    y: 5,
+                    color: colors[53],
+                    drilldown:{
+                        name: 'Nike-2013-12',
+                        categories: ['Male', 'Female'],
+                        color: colors[53],
+                        data: [3,2]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[54],
+                    drilldown:{
+                        name: 'Jade-2013-12',
+                        categories: ['Male', 'Female'],
+                        color: colors[54],
+                        data: [3,1]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[55],
+                    drilldown:{
+                        name: 'Diamond-2013-11',
+                        categories: ['Male', 'Female'],
+                        color: colors[55],
+                        data: [3,1]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[56],
+                    drilldown:{
+                        name: 'Queeine-2013-10',
+                        categories: ['Male', 'Female'],
+                        color: colors[56],
+                        data: [2,2]
+                    }
+                },
+                {
+                    y: 2,
+                    color: colors[57],
+                    drilldown:{
+                        name: 'Amanda',
+                        categories: ['Male', 'Female'],
+                        color: colors[57],
+                        data: [2,0]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[58],
+                    drilldown:{
+                        name: 'Raven-2013-09',
+                        categories: ['Male', 'Female'],
+                        color: colors[58],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[59],
+                    drilldown:{
+                        name: 'Brandy-2013-09',
+                        categories: ['Male', 'Female'],
+                        color: colors[59],
+                        data: [2,2]
+                    }
+                },
+                {
+                    y: 6,
+                    color: colors[60],
+                    drilldown:{
+                        name: 'Wendy-2013-9',
+                        categories: ['Male', 'Female'],
+                        color: colors[60],
+                        data: [0,6]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[61],
+                    drilldown:{
+                        name: 'Ada-2013-09',
+                        categories: ['Male', 'Female'],
+                        color: colors[61],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[62],
+                    drilldown:{
+                        name: 'Tiffany-2013-08',
+                        categories: ['Male', 'Female'],
+                        color: colors[62],
+                        data: [1,3]
+                    }
+                },
+                {
+                    y: 2,
+                    color: colors[63],
+                    drilldown:{
+                        name: 'Carmen-2013-08',
+                        categories: ['Male', 'Female'],
+                        color: colors[63],
+                        data: [1,1]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[64],
+                    drilldown:{
+                        name: 'Jackie-2013-07',
+                        categories: ['Male', 'Female'],
+                        color: colors[64],
+                        data: [2,2]
+                    }
+                },
+                {
+                    y: 2,
+                    color: colors[65],
+                    drilldown:{
+                        name: 'Emily-2013-07',
+                        categories: ['Male', 'Female'],
+                        color: colors[65],
+                        data: [0,2]
+                    }
+                },
+                {
+                    y: 2,
+                    color: colors[66],
+                    drilldown:{
+                        name: 'Jessica-2013-0',
+                        categories: ['Male', 'Female'],
+                        color: colors[66],
+                        data: [0,2]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[67],
+                    drilldown:{
+                        name: 'Ella-2013-07',
+                        categories: ['Male', 'Female'],
+                        color: colors[67],
+                        data: [2,2]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[68],
+                    drilldown:{
+                        name: 'Vicky-2013-07',
+                        categories: ['Male', 'Female'],
+                        color: colors[68],
+                        data: [3,1]
+                    }
+                },
+                {
+                    y: 0,
+                    color: colors[69],
+                    drilldown:{
+                        name: 'Sissy-2013-07-1',
+                        categories: ['Male', 'Female'],
+                        color: colors[69],
+                        data: [0,0]
+                    }
+                },
+                {
+                    y: 2,
+                    color: colors[70],
+                    drilldown:{
+                        name: 'Apple-2013-06',
+                        categories: ['Male', 'Female'],
+                        color: colors[70],
+                        data: [1,1]
+                    }
+                },
+                {
+                    y: 3,
+                    color: colors[71],
+                    drilldown:{
+                        name: 'Betty-2013-07',
+                        categories: ['Male', 'Female'],
+                        color: colors[71],
+                        data: [1,2]
+                    }
+                },
+                {
+                    y: 7,
+                    color: colors[72],
+                    drilldown:{
+                        name: 'Esme-2013-06',
+                        categories: ['Male', 'Female'],
+                        color: colors[72],
+                        data: [4,3]
+                    }
+                },
+                {
+                    y: 1,
+                    color: colors[73],
+                    drilldown:{
+                        name: 'Cartier-2013-06',
+                        categories: ['Male', 'Female'],
+                        color: colors[73],
+                        data: [0,1]
+                    }
+                },
+                {
+                    y: 5,
+                    color: colors[74],
+                    drilldown:{
+                        name: 'Margo-2013-06',
+                        categories: ['Male', 'Female'],
+                        color: colors[74],
+                        data: [3,2]
+                    }
+                },
+                {
+                    y: 4,
+                    color: colors[75],
+                    drilldown:{
+                        name: 'Nana-2013-05',
+                        categories: ['Male', 'Female'],
+                        color: colors[75],
+                        data: [2,2]
+                    }
+                },
+                {
+                    y: 1,
+                    color: colors[76],
+                    drilldown:{
+                        name: 'Mambo-2013-05',
+                        categories: ['Male', 'Female'],
+                        color: colors[76],
+                        data: [0,1]
+                    }
+                },
+                {
+                    y: 2,
+                    color: colors[77],
+                    drilldown:{
+                        name: 'A-May-2013-05',
+                        categories: ['Male', 'Female'],
+                        color: colors[77],
+                        data: [2,0]
+                    }
+                },
+                {
+                    y: 2,
+                    color: colors[78],
+                    drilldown:{
+                        name: 'Melody-2013-05',
+                        categories: ['Male', 'Female'],
+                        color: colors[78],
+                        data: [1,1]
+                    }
+                },
+                {
+                    y: 1,
+                    color: colors[79],
+                    drilldown:{
+                        name: 'Diamond-2013-05',
+                        categories: ['Male', 'Female'],
+                        color: colors[79],
+                        data: [0,1]
+                    }
+                },
+                {
+                    y: 1,
+                    color: colors[80],
+                    drilldown:{
+                        name: 'Raven-2013-04',
+                        categories: ['Male', 'Female'],
+                        color: colors[80],
+                        data: [0,1]
+                    }
+                },
+            ];
+
+        // Build the data arrays
+        var pregnancyData = [];
+        var litterData = [];
+        for (var i = 0; i < data.length; i++) {
+    
+            // add pregnancy data
+            pregnancyData.push({
+                name: categories[i],
+                y: data[i].y,
+                //color: data[i].color
+
+            });
+    
+            // add litter data
+            for (var j = 0; j < data[i].drilldown.data.length; j++) {
+                var brightness = 0.2 - (j / data[i].drilldown.data.length) / 5 ;
+                litterData.push({
+                    name: data[i].drilldown.categories[j],
+                    y: data[i].drilldown.data[j],
+                    // color: Highcharts.Color(data[i].color).brighten(brightness).get()
+                });
+            }
+
+        }
+    
+        // Create the chart
+        $('#container').highcharts({
+            chart: {
+                type: 'pie'
+            },
+            credits: {enabled: false},
+            title: {
+                text: 'Litter puppies by gender'
+            },
+            yAxis: {
+                title: {
+                    text: 'Total percent market share'
+                }
+            },
+            plotOptions: {
+                pie: {
+                    shadow: false,
+                    center: ['50%', '50%']
+                }
+            },
+            tooltip: {
+                // valueSuffix: '%'
+            },
+            series: [{
+                name: 'Litter',
+                data: pregnancyData,
+                size: '60%',
+                dataLabels: {
+                    formatter: function() {
+                        return this.y > 2 ? this.point.name : null;
+                    },
+                    color: 'white',
+                    distance: -30
+                }
+            }, {
+                name: 'Puppy',
+                data: litterData,
+                size: '80%',
+                innerSize: '60%',
+                dataLabels: {
+                    formatter: function() {
+                        return this.y > 0 ? this.point.name +':'+ this.y : null;
+                    }
+                }
+
+            }]
+        });
+    });
+</script>
+<div id="container"></div><hr>
